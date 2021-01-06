@@ -6,4 +6,4 @@ No database.
 
 ## Demo
 
-![Farmers Market Finder Demo](https://ebizo.pl/ftp/Weather_forecast.gif)
+![Demo Animation](https://user-images.githubusercontent.com/17027876/103727654-18a81480-4fdc-11eb-861c-40ac0136670c.gif)
