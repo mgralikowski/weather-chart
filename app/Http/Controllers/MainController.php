@@ -20,13 +20,17 @@ class MainController extends Controller
 
         // @todo Move to service class.
 
-        $response = Cache::remember('openweather', 60, function () use ($current) {
+        $response = Cache::remember('openweather:' . md5($current), 60, static function () use ($current) {
             return Http::get('api.openweathermap.org/data/' . config('services.openweather.version') . '/forecast', [
                 'q'     => $current,
                 'appid' => config('services.openweather.api_key'),
                 'units' => config('services.openweather.units'),
             ])->object();
         });
+
+        if (empty($response->list) || ! is_array($response->list)) {
+            abort(404, 'City ' . $current . ' not found or service is not unavailable!');
+        }
 
         foreach (config('services.openweather.map') as $name => $attribute) {
             $$name = collect();
