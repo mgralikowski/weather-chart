@@ -7,7 +7,7 @@
   </component>
   <component name="PhpCSFixer">
     <phpcsfixer_settings>
-      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/../apitask/vendor/bin/php-cs-fixer" />
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/vendor/bin/php-cs-fixer" />
     </phpcsfixer_settings>
   </component>
   <component name="PhpIncludePathManager">
